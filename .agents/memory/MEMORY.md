@@ -1,0 +1,1 @@
+- [Static-to-server preview routing](static-to-server-preview-routing.md) — test the Replit dev domain after replacing a static workflow; stale processes or port mappings can bypass the new server.
