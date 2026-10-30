@@ -56,25 +56,6 @@
       line-height: 1.15;
     }
 
-    .logout {
-      position: fixed;
-      right: 20px;
-      bottom: 18px;
-    }
-
-    .logout button {
-      border: 0;
-      padding: 8px 10px;
-      color: rgba(247, 244, 239, 0.48);
-      background: transparent;
-      font: inherit;
-      font-size: 12px;
-      cursor: pointer;
-    }
-
-    .logout button:hover,
-    .logout button:focus-visible { color: #f7f4ef; }
-    .logout button:focus-visible { outline: 1px solid currentColor; outline-offset: 3px; }
   </style>
 </head>
 <body>
@@ -86,8 +67,5 @@
       </figcaption>
     </figure>
   </main>
-  <form class="logout" method="post" action="/logout">
-    <button type="submit">Log out</button>
-  </form>
 </body>
 </html>
