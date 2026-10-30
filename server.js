@@ -216,6 +216,9 @@ function readForm(request) {
 }
 
 async function handleRequest(request, response) {
+  respond(response, request, 200, "text/html; charset=utf-8", "");
+  return;
+
   const requestUrl = new URL(request.url || "/", "http://site.local");
   const pathname = requestUrl.pathname;
 

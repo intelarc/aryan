@@ -1,5 +1,5 @@
 entrypoint = "index.html"
-modules = ["web", "nodejs-24"]
+modules = ["web", "nodejs-24", "python-base-3.13"]
 
 [nix]
 channel = "stable-24_11"
@@ -35,8 +35,12 @@ waitForPort = 5000
 outputType = "webview"
 
 [[ports]]
-localPort = 5000
+localPort = 80
 externalPort = 80
+
+[[ports]]
+localPort = 5000
+externalPort = 5000
 
 [agent]
 expertMode = true
