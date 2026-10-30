@@ -2,7 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="color-scheme" content="dark">
+  <title>My beautiful Kohaze</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #050505;
+      color: #f7f4ef;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 280px;
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 32px 20px;
+      background: #050505;
+    }
+
+    main {
+      width: min(100%, 440px);
+      text-align: center;
+    }
+
+    figure { margin: 0; }
+
+    img {
+      display: block;
+      width: min(72vw, 292px);
+      aspect-ratio: 1;
+      margin: 0 auto;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.58);
+    }
+
+    h1 {
+      margin: 26px 0 0;
+      font-size: clamp(1.8rem, 7vw, 2.35rem);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 1.15;
+    }
+
+    .logout {
+      position: fixed;
+      right: 20px;
+      bottom: 18px;
+    }
+
+    .logout button {
+      border: 0;
+      padding: 8px 10px;
+      color: rgba(247, 244, 239, 0.48);
+      background: transparent;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .logout button:hover,
+    .logout button:focus-visible { color: #f7f4ef; }
+    .logout button:focus-visible { outline: 1px solid currentColor; outline-offset: 3px; }
+  </style>
 </head>
-<body></body>
+<body>
+  <main>
+    <figure>
+      <img src="/kohaze.png" alt="Kohaze, a black cat with a white chest, sitting among flowers">
+      <figcaption>
+        <h1>My beautiful Kohaze</h1>
+      </figcaption>
+    </figure>
+  </main>
+  <form class="logout" method="post" action="/logout">
+    <button type="submit">Log out</button>
+  </form>
+</body>
 </html>

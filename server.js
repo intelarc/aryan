@@ -28,6 +28,9 @@ const sessionSigningKey = crypto
   .update(`private-site-session-key-v1:${sitePassword}`)
   .digest();
 const indexHtml = fs.readFileSync(path.join(__dirname, "index.html"));
+const kohazeImage = fs.readFileSync(
+  path.join(__dirname, "attached_assets", "c969e9e9637091499c0f7787eefbd090_1793332994576.png"),
+);
 const failedAttempts = new Map();
 
 const loginHtml = (message = "") => `<!doctype html>
@@ -216,9 +219,6 @@ function readForm(request) {
 }
 
 async function handleRequest(request, response) {
-  respond(response, request, 200, "text/html; charset=utf-8", "");
-  return;
-
   const requestUrl = new URL(request.url || "/", "http://site.local");
   const pathname = requestUrl.pathname;
 
@@ -324,6 +324,15 @@ async function handleRequest(request, response) {
 
   if (!hasValidSession(request)) {
     respond(response, request, 200, "text/html; charset=utf-8", loginHtml());
+    return;
+  }
+
+  if (pathname === "/kohaze.png" &&
+      (request.method === "GET" || request.method === "HEAD")) {
+    respond(response, request, 200, "image/png", kohazeImage, {
+      policy: contentSecurityPolicies.site,
+      "Content-Length": String(kohazeImage.length),
+    });
     return;
   }
 
